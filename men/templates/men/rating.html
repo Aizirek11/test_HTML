@@ -1,0 +1,16 @@
+{% extends "men/base.html" %}
+
+{% block content %}
+<h1>Рейтинг студентов</h1>
+
+{% if users %}
+    {% for user in users %}
+        <div class="card">
+            <p><strong>{{ forloop.counter }}. {{ user.username }}</strong></p>
+            <p>Общий балл: {{ user.total_score|default:"0" }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Нет данных для рейтинга.</p>
+{% endif %}
+{% endblock %}

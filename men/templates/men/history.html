@@ -1,0 +1,17 @@
+{% extends "men/base.html" %}
+
+{% block content %}
+<h1>История тестов</h1>
+
+{% if results %}
+    {% for result in results %}
+        <div class="card">
+            <p><strong>Тест:</strong> {{ result.category.name }}</p>
+            <p>Баллы: {{ result.score }}/{{ result.total }}</p>
+            <p>Дата: {{ result.date }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>История результатов пуста.</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> My mini Test S</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; color:#333; }
+        header { background: linear-gradient(90deg, #4CAF50, #45a049); color:white; padding:20px; text-align:center; font-size:1.8em; box-shadow:0 2px 4px rgba(0,0,0,0.2); }
+        nav { background-color:#333; display:flex; justify-content:center; }
+        nav a { color:white; text-decoration:none; padding:14px 20px; font-weight:bold; transition:0.3s; }
+        nav a:hover { background-color:#575757; border-radius:4px; }
+        main { max-width:900px; margin:30px auto; padding:20px; background-color:white; border-radius:10px; box-shadow:0 6px 12px rgba(0,0,0,0.1); }
+        h1,h2 { margin-bottom:20px; color:#222; }
+        .card { background-color:#fafafa; border:1px solid #ddd; padding:15px 20px; margin-bottom:15px; border-radius:8px; transition:0.2s; }
+        .card:hover { box-shadow:0 4px 10px rgba(0,0,0,0.1); transform: translateY(-2px); }
+        button { background-color:#4CAF50; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:bold; transition:0.3s; }
+        button:hover { background-color:#45a049; }
+        footer { text-align:center; padding:15px; background-color:#f0f0f0; margin-top:30px; color:#555; font-size:0.9em; }
+    </style>
+</head>
+<body>
+    <header>Mini Test Site</header>
+    <nav>
+        <a href="{% url 'profile_page' %}">Профиль</a>
+        <a href="{% url 'categories_page' %}">Тесты</a>
+        <a href="{% url 'history_page' %}">История</a>
+        <a href="{% url 'rating_page' %}">Рейтинг</a>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>&copy; 2026 Mini Test Site. Все права защищены.</footer>
+</body>
+</html>

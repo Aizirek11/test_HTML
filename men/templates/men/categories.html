@@ -1,0 +1,17 @@
+{% extends "men/base.html" %}
+
+{% block content %}
+<h1>Категории тестов</h1>
+
+{% if categories %}
+    {% for category in categories %}
+        <div class="card">
+            <h2>{{ category.name }}</h2>
+            <p>{{ category.description }}</p>
+            <a href="{% url 'questions_page' category.id %}"><button>Пройти тест</button></a>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>Категории отсутствуют.</p>
+{% endif %}
+{% endblock %}
